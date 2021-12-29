@@ -1,5 +1,2 @@
-package vcs
-theme bira
-theme chain
+package fzf
 theme default
-theme spacefish

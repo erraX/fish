@@ -1,50 +1,55 @@
-# quick jump
-alias ..='cd ../'
-alias ..2='cd ../../'
-alias ..3='cd ../../../'
-alias ..4='cd ../../../../'
+[ -f /opt/homebrew/share/autojump/autojump.fish ]; and source /opt/homebrew/share/autojump/autojump.fish
+set -g fish_user_paths "/opt/homebrew/opt/luajit-openresty/bin" $fish_user_paths
+fish_add_path -aP "~/.emacs.d/bin"
 
-# quick browser
-alias dl='cd ~/Downloads'
-alias dc='cd ~/Documents'
-alias me='cd ~/Movies'
-alias pic='cd ~/Pictures'
-alias wk='cd ~/workspace'
-alias tc='cd ~/workspace/tencent'
-alias gtb='cd ~/workspace/github'
+export BAT_THEME="gruvbox-dark"
+export EDITOR=nvim
+export VISUAL=nvim
 
-alias cp='cp -iv'
-alias mv='mv -iv'
-alias rm='rm -iv'
-alias chmod='chmod -v'
-alias chown='chown -v'
-alias mkdir='mkdir -pv' # Verbose & Parents mkdir flag
+# alias
+alias src 'source ~/.config/fish/config.fish'
+alias cat 'bat'
+alias vi 'nvim'
+alias a 'ls'
+alias c 'clear'
+alias ll 'ls -la'
+alias su 'su -m'
+alias df 'df -h'
+alias du 'du -h -d 2'
+alias tf 'tail -f'
 
-alias vi='nvim'
-alias cat='bat'
-alias top='htop'
-alias ls='exa'
-alias ll='ls -al'
-alias la='ls -a'
+# common directories
+alias wk 'cd ~/workspace'
+alias home 'cd ~'
+alias dl 'cd ~/Downloads'
+alias github 'cd ~/github'
 
-# alias path='echo -e ${PATH//:/\\n}' # Formatted path
-alias f='open -a Finder ./'
-alias qfind="find . -name "
-alias cpd='copydir'
-alias ip='ipconfig getifaddr en0'
-alias grep='grep -b --color=auto'
-alias cpwd="pwd |  tr -d '\n' | pbcopy"
+# alias git
+alias g git
+alias gd 'git diff'
+alias gc 'git clean'
+alias gdc 'git diff --cached'
+alias gco 'git checkout'
+alias gre 'git reset'
+alias greh 'git reset --hard'
+alias gres 'git reset --soft'
+alias gcm 'git commit -m'
+alias gca 'git commit --amend'
+alias gp 'git push'
+alias gl 'git pull'
+alias glr 'git pull --reabse'
+alias gri 'git rebase -i'
+alias gst 'git status'
 
-# git
-alias g='git'
-alias glogs='git log --stat'
-alias glog='git log'
-alias gst='git status'
-alias gd='git diff'
-alias gl='git pull'
-alias glr='git pull --rebase'
-alias gp='git push'
-alias gcmsg='git commit -m'
-alias gcma='git commit --amend'
+# alias cd
+alias cd.. 'cd ..'
+alias .. 'cd ..'
+alias ... 'cd ../..'
+alias .... 'cd ../../..'
+alias ..... 'cd ../../../..'
 
-[ -f /usr/local/share/autojump/autojump.fish ]; and source /usr/local/share/autojump/autojump.fish
+# alias file
+alias md 'mkdir -p'
+alias yd 'youtube-dl'
+
+rvm default
